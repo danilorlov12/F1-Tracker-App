@@ -13,7 +13,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class Formula1MapperModule {
+abstract class StandingsMapperModule {
 
     @Binds
     abstract fun provideDriverStandingsMapper(mapper: DriverStandingsUiMapper): DriverStandingsResult.Mapper<DriverStandingsUiState>
