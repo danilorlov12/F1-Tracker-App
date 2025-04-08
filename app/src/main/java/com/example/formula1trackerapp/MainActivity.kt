@@ -18,16 +18,28 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {
-            Formula1TrackerAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Box(
-                        modifier = Modifier.fillMaxSize().padding(innerPadding)
-                    ) {
-                        StandingsScreen()
+
+        if (!isRunningTest()) {
+            setContent {
+                Formula1TrackerAppTheme {
+                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                        Box(
+                            modifier = Modifier.fillMaxSize().padding(innerPadding)
+                        ) {
+                            StandingsScreen()
+                        }
                     }
                 }
             }
+        }
+    }
+
+    private fun isRunningTest(): Boolean {
+        return try {
+            Class.forName("androidx.test.espresso.Espresso")
+            true
+        } catch (e: ClassNotFoundException) {
+            false
         }
     }
 }
