@@ -1,6 +1,6 @@
 package com.example.formula1trackerapp.standing.di
 
-import com.example.formula1trackerapp.standing.data.FakeStandingRepository
+import com.example.formula1trackerapp.standing.data.FakeStandingsRepository
 import com.example.standings.di.StandingsRepositoryModule
 import com.example.standings.domain.StandingsRepository
 import dagger.Module
@@ -19,6 +19,6 @@ object RepositoryTestModule {
     @Provides
     @Singleton
     fun provideFakeStandingsRepository(): StandingsRepository {
-        return FakeStandingRepository()
+        return FakeStandingsRepository()
     }
 }

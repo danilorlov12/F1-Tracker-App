@@ -6,7 +6,8 @@ import com.example.standings.domain.teams.TeamStandingsResult
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class FakeStandingRepository @Inject constructor() : StandingsRepository {
+class FakeStandingsRepository @Inject constructor() : StandingsRepository {
+
     override fun loadDriverStandingsByYear(year: Int) = flow {
         emit(DriverStandingsResult.Success(fakeDriverList))
     }
