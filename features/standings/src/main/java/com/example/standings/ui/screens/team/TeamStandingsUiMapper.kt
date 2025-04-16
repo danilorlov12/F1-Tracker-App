@@ -1,11 +1,14 @@
 package com.example.standings.ui.screens.team
 
+import com.example.core.providers.TeamLogoProvider
 import com.example.standings.data.api_model.TeamStandingsApiModel
 import com.example.standings.domain.teams.TeamStandingsResult
 import com.example.standings.ui.model.Team
 import javax.inject.Inject
 
-class TeamStandingsUiMapper @Inject constructor() : TeamStandingsResult.Mapper<TeamStandingsUiState> {
+class TeamStandingsUiMapper @Inject constructor(
+    private val teamLogoProvider: TeamLogoProvider
+) : TeamStandingsResult.Mapper<TeamStandingsUiState> {
 
     override fun mapSuccess(model: TeamStandingsApiModel?): TeamStandingsUiState {
         return TeamStandingsUiState.Success(
@@ -13,7 +16,7 @@ class TeamStandingsUiMapper @Inject constructor() : TeamStandingsResult.Mapper<T
                 Team(
                     id = it.team.id,
                     name = it.team.name,
-                    logoResId = 0,
+                    logoResId = teamLogoProvider.logoByTeamId(it.team.id),
                     points = it.points,
                     place = it.place
                 )

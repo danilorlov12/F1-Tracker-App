@@ -67,14 +67,68 @@ private val fakeDriverList = DriverStandingsApiModel(
     )
 )
 
-private val fakeTeamList = TeamStandingsApiModel(
+val fakeTeamList = TeamStandingsApiModel(
     teams = listOf(
         TeamPointsApiModel(
             team = TeamApiModel(id = 0, name = "McLaren", titleSponsor = ""),
             drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
             points = 666.0,
             place = 1
-        )
+        ),
+        TeamPointsApiModel(
+            team = TeamApiModel(id = 1, name = "Ferrari", titleSponsor = ""),
+            drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
+            points = 652.0,
+            place = 2
+        ),
+        TeamPointsApiModel(
+            team = TeamApiModel(id = 2, name = "Red Bull", titleSponsor = ""),
+            drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
+            points = 589.0,
+            place = 3
+        ),
+        TeamPointsApiModel(
+            team = TeamApiModel(id = 3, name = "Mercedes", titleSponsor = ""),
+            drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
+            points = 468.0,
+            place = 4
+        ),
+        TeamPointsApiModel(
+            team = TeamApiModel(id = 4, name = "Aston Martin", titleSponsor = ""),
+            drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
+            points = 94.0,
+            place = 5
+        ),
+        TeamPointsApiModel(
+            team = TeamApiModel(id = 5, name = "Alpine", titleSponsor = ""),
+            drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
+            points = 65.0,
+            place = 6
+        ),
+        TeamPointsApiModel(
+            team = TeamApiModel(id = 6, name = "Haas", titleSponsor = ""),
+            drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
+            points = 58.0,
+            place = 7
+        ),
+        TeamPointsApiModel(
+            team = TeamApiModel(id = 7, name = "RB", titleSponsor = ""),
+            drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
+            points = 46.0,
+            place = 8
+        ),
+        TeamPointsApiModel(
+            team = TeamApiModel(id = 8, name = "Williams", titleSponsor = ""),
+            drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
+            points = 17.0,
+            place = 9
+        ),
+        TeamPointsApiModel(
+            team = TeamApiModel(id = 9, name = "Kick Sauber", titleSponsor = ""),
+            drivers = listOf(DriverApiModel(id = 1, firstName = "Lando", lastName = "Norris"), DriverApiModel(id = 3, firstName = "Oscar", lastName = "Piastri")),
+            points = 4.0,
+            place = 10
+        ),
     ),
     year = 2024
 )

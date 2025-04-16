@@ -68,7 +68,7 @@ fun TeamItem(team: Team) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(12.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Box(
@@ -102,7 +102,7 @@ fun TeamItem(team: Team) {
 
             Image(
                 modifier = Modifier.height(36.dp).width(36.dp),
-                painter = painterResource(com.example.core.R.mipmap.aston_martin),
+                painter = painterResource(team.logoResId),
                 contentDescription = null,
             )
 
