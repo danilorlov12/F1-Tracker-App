@@ -21,6 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Formula 1 Tracker App"
 include(":app")
-include(":features")
-include(":features:standings")
 include(":core")
+include(":features")
+include(":features:main")
+include(":features:standings")
