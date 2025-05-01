@@ -6,4 +6,5 @@ sealed class BottomNavItem(
     val label: String
 ) {
     data object Standings : BottomNavItem("standings", com.google.android.material.R.drawable.ic_clear_black_24, "Standings")
+    data object RaceResults : BottomNavItem("race_results", com.google.android.material.R.drawable.ic_clear_black_24, "Results")
 }

@@ -21,7 +21,7 @@ val LocalNavController = staticCompositionLocalOf<NavHostController> {
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
-    val items = listOf(BottomNavItem.Standings)
+    val items = listOf(BottomNavItem.Standings, BottomNavItem.RaceResults)
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),

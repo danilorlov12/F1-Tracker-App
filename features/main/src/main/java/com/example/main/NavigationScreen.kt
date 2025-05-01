@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.main.bottom_bar.BottomNavItem
+import com.example.race_results.ui.screens.RaceResultsScreen
 import com.example.standings.ui.screens.StandingsScreen
 
 @Composable
@@ -25,6 +26,9 @@ fun NavigationScreen(navController: NavHostController) {
         ) {
             composable(BottomNavItem.Standings.route) {
                 StandingsScreen()
+            }
+            composable(BottomNavItem.RaceResults.route) {
+                RaceResultsScreen()
             }
         }
     }

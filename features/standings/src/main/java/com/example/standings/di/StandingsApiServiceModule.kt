@@ -14,7 +14,7 @@ object StandingsApiServiceModule {
 
     @Provides
     @Singleton
-    fun provideFootballServiceAPI(retrofit: Retrofit): StandingsServiceAPI {
+    fun provideStandingsServiceAPI(retrofit: Retrofit): StandingsServiceAPI {
         return retrofit.create(StandingsServiceAPI::class.java)
     }
 }
