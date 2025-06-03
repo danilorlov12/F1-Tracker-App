@@ -2,6 +2,7 @@ package com.example.main.bottom_bar
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
@@ -48,7 +49,7 @@ fun BottomNavigationBar(navController: NavController, items: List<BottomNavItem>
                 },
                 icon = {
                     Icon(
-                        modifier = Modifier.width(32.dp).height(32.dp),
+                        modifier = Modifier.width(32.dp).height(32.dp).padding(2.dp),
                         painter = painterResource(item.iconId),
                         contentDescription = null,
                         tint = Color.White,
