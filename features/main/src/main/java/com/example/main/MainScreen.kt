@@ -40,7 +40,7 @@ fun MainScreen() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(Color.DarkGray)
+                .background(Color(0x0F484848))
         ) {
             NavigationScreen(navController)
         }
