@@ -55,6 +55,7 @@ android {
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":base"))
     implementation(project(":features:main"))
     implementation(project(":features:standings"))
     implementation(project(":features:race-results"))

@@ -52,6 +52,7 @@ android {
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":base"))
     implementation(project(":features:driver-details"))
 
     implementation(libs.androidx.core.ktx)

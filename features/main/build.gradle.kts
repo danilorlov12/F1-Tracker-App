@@ -48,6 +48,7 @@ android {
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":base"))
     implementation(project(":features:standings"))
     implementation(project(":features:race-results"))
     implementation(project(":features:driver-details"))
