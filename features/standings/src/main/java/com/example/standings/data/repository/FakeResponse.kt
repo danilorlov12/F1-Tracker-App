@@ -7,7 +7,7 @@ import com.example.standings.data.api_model.TeamApiModel
 import com.example.standings.data.api_model.TeamPointsApiModel
 import com.example.standings.data.api_model.TeamStandingsApiModel
 
-private val fakeDriverList = DriverStandingsApiModel(
+val fakeDriverList = DriverStandingsApiModel(
     year = 2024,
     drivers = listOf(
         DriverPointsApiModel(

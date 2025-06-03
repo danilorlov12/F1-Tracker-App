@@ -7,6 +7,8 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.core.LocalNavController
+import com.example.driver_details.ui.driverDetailsScreen
 import com.example.main.bottom_bar.BottomNavItem
 import com.example.race_results.ui.screens.RaceResultsScreen
 import com.example.standings.ui.screens.StandingsScreen
@@ -30,6 +32,7 @@ fun NavigationScreen(navController: NavHostController) {
             composable(BottomNavItem.RaceResults.route) {
                 RaceResultsScreen()
             }
+            driverDetailsScreen()
         }
     }
 }

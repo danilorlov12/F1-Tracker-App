@@ -24,7 +24,8 @@ class StandingsRepositoryImpl @Inject constructor(
             DriverStandingsResult.Error(result.message())
         }
     }.catch {
-        emit(DriverStandingsResult.Error(""))
+        emit(DriverStandingsResult.Success(fakeDriverList))
+        //emit(DriverStandingsResult.Error(""))
     }
 
     override fun loadTeamStandingsByYear(year: Int) = flow {

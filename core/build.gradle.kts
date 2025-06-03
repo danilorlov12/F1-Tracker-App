@@ -35,12 +35,16 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.activity.compose)
+
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
 
     implementation(libs.okhttp)
     implementation(libs.okhttp.urlconnection)
     implementation(libs.okhttp.logging.interceptor)
+
+    implementation(libs.navigation.compose)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

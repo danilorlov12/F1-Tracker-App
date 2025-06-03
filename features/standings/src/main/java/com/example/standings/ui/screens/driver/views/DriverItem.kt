@@ -23,9 +23,12 @@ import com.example.standings.ui.model.Driver
 import kotlin.math.roundToInt
 
 @Composable
-fun DriverItem(driver: Driver) {
+fun DriverItem(
+    modifier: Modifier,
+    driver: Driver
+) {
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier
     ) {
         Row(
             modifier = Modifier
