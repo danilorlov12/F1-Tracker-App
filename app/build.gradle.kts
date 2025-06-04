@@ -56,6 +56,9 @@ dependencies {
 
     implementation(project(":core"))
     implementation(project(":base"))
+    implementation(project(":assets"))
+    implementation(project(":assets:drivers"))
+    implementation(project(":json-serializer"))
     implementation(project(":features:main"))
     implementation(project(":features:standings"))
     implementation(project(":features:race-results"))

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.features"
+    namespace = "com.example.assets"
     compileSdk = 35
 
     defaultConfig {

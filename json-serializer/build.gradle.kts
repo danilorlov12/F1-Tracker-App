@@ -1,10 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.org.jetbrains.kotlin.kapt)
 }
 
 android {
-    namespace = "com.example.features"
+    namespace = "com.example.json_serializer"
     compileSdk = 35
 
     defaultConfig {
@@ -33,6 +34,12 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.retrofit.converter.gson)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

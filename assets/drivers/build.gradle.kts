@@ -1,10 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.org.jetbrains.kotlin.kapt)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
-    namespace = "com.example.features"
+    namespace = "com.example.drivers"
     compileSdk = 35
 
     defaultConfig {
@@ -30,9 +32,20 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    hilt {
+        enableAggregatingTask = false
+    }
 }
 
 dependencies {
+
+    implementation(project(":json-serializer"))
+
+    implementation(libs.retrofit.converter.gson)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
