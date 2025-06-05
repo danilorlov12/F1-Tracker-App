@@ -55,6 +55,11 @@ dependencies {
     implementation(project(":base"))
     implementation(project(":features:driver-details"))
 
+    implementation(project(":assets:race-results"))
+    implementation(project(":assets:teams"))
+    implementation(project(":assets:drivers"))
+    implementation(project(":assets:seasons"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -58,6 +58,10 @@ dependencies {
     implementation(project(":base"))
     implementation(project(":assets"))
     implementation(project(":assets:drivers"))
+    implementation(project(":assets:teams"))
+    implementation(project(":assets:race-results"))
+    implementation(project(":assets:seasons"))
+
     implementation(project(":json-serializer"))
     implementation(project(":features:main"))
     implementation(project(":features:standings"))

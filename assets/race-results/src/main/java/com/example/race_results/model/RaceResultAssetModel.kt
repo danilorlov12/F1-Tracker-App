@@ -8,7 +8,7 @@ data class RaceResultAssetModel(
     @SerializedName("fastestLapTime") val fastestLapTime: String = "",
     @SerializedName("id") val id: Int = 0,
     @SerializedName("laps") val laps: Int = 0,
-    @SerializedName("points") val points: Int = 0,
+    @SerializedName("points") val points: Double = 0.0,
     @SerializedName("position") val position: Int = 0,
     @SerializedName("setFastestLap") val setFastestLap: Boolean = false,
     @SerializedName("shortName") val shortName: String = "",

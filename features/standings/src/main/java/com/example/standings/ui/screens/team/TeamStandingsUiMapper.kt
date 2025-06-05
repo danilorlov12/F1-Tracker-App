@@ -1,9 +1,11 @@
 package com.example.standings.ui.screens.team
 
 import com.example.core.providers.TeamLogoProvider
+import com.example.race_results.model.RaceResultAssetModel
 import com.example.standings.data.api_model.TeamStandingsApiModel
 import com.example.standings.domain.teams.TeamStandingsResult
 import com.example.standings.ui.model.Team
+import com.example.teams.model.TeamDetailsAssetModel
 import javax.inject.Inject
 
 class TeamStandingsUiMapper @Inject constructor(
@@ -26,5 +28,12 @@ class TeamStandingsUiMapper @Inject constructor(
 
     override fun mapError(error: String): TeamStandingsUiState {
         return TeamStandingsUiState.Error(error)
+    }
+
+    override fun mapAsset(
+        raceResults: List<RaceResultAssetModel>,
+        teams: List<TeamDetailsAssetModel>
+    ): TeamStandingsUiState {
+        return TeamStandingsUiState.Success(emptyList())
     }
 }
