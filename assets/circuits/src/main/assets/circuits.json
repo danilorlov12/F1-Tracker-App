@@ -1,0 +1,122 @@
+[
+  {
+    "id": 0,
+    "city": "Sakhir",
+    "circuitName": "Bahrain International Circuit"
+  },
+  {
+    "id": 1,
+    "city": "Jeddah",
+    "circuitName": "Jeddah Corniche Circuit"
+  },
+  {
+    "id": 2,
+    "city": "Melbourne",
+    "circuitName": "Albert Park Grand Prix Circuit"
+  },
+  {
+    "id": 3,
+    "city": "Suzuka",
+    "circuitName": "Suzuka Circuit"
+  },
+  {
+    "id": 4,
+    "city": "Shanghai",
+    "circuitName": "Shanghai International Circuit"
+  },
+  {
+    "id": 5,
+    "city": "Miami",
+    "circuitName": "Miami International Autodrome"
+  },
+  {
+    "id": 6,
+    "city": "Imola",
+    "circuitName": "Autodromo Internazionale Enzo e Dino Ferrari"
+  },
+  {
+    "id": 7,
+    "city": "Monaco",
+    "circuitName": "Circuit de Monaco"
+  },
+  {
+    "id": 8,
+    "city": "Montréal",
+    "circuitName": "Circuit Gilles-Villeneuve"
+  },
+  {
+    "id": 9,
+    "city": "Barcelona",
+    "circuitName": "Circuit de Barcelona-Catalunya"
+  },
+  {
+    "id": 10,
+    "city": "Spielberg",
+    "circuitName": "Red Bull Ring"
+  },
+  {
+    "id": 11,
+    "city": "Silverstone",
+    "circuitName": "Silverstone Circuit"
+  },
+  {
+    "id": 12,
+    "city": "Budapest",
+    "circuitName": "Hungaroring"
+  },
+  {
+    "id": 13,
+    "city": "Spa-Francorchamps",
+    "circuitName": "Circuit de Spa-Francorchamps"
+  },
+  {
+    "id": 14,
+    "city": "Zandvoort",
+    "circuitName": "Circuit Zandvoort"
+  },
+  {
+    "id": 15,
+    "city": "Monza",
+    "circuitName": "Autodromo Nazionale Monza"
+  },
+  {
+    "id": 16,
+    "city": "Baku",
+    "circuitName": "Baku City Circuit"
+  },
+  {
+    "id": 17,
+    "city": "Singapore",
+    "circuitName": "Marina Bay Street Circuit"
+  },
+  {
+    "id": 18,
+    "city": "Austin",
+    "circuitName": "Circuit of the Americas"
+  },
+  {
+    "id": 19,
+    "city": "Mexico City",
+    "circuitName": "Autodromo Hermanos Rodriguez"
+  },
+  {
+    "id": 20,
+    "city": "São Paulo",
+    "circuitName": "Autodromo José Carlos Pace"
+  },
+  {
+    "id": 21,
+    "city": "Las Vegas",
+    "circuitName": "Las Vegas Strip Circuit"
+  },
+  {
+    "id": 22,
+    "city": "Qatar",
+    "circuitName": "Lusail International Circuit"
+  },
+  {
+    "id": 23,
+    "city": "Yas Island",
+    "circuitName": "Yas Marina Circuit"
+  }
+]

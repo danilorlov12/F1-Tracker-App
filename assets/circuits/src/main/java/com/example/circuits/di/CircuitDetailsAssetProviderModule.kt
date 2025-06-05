@@ -1,7 +1,7 @@
-package com.example.drivers.di
+package com.example.circuits.di
 
-import com.example.drivers.DriverDetailsProvider
-import com.example.drivers.DriverDetailsProviderImpl
+import com.example.circuits.CircuitDetailsProvider
+import com.example.circuits.CircuitDetailsProviderImpl
 import com.example.json_serializer.json_provider.JsonProvider
 import com.example.json_serializer.serialization.Serialization
 import dagger.Module
@@ -12,14 +12,14 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DriverDetailsAssetProviderModule {
+object CircuitDetailsAssetProviderModule {
 
     @Provides
     @Singleton
-    fun provideDriverDetailsAssetProvider(
+    fun provideCircuitDetailsAssetProvider(
         jsonProvider: JsonProvider,
         serialization: Serialization
-    ): DriverDetailsProvider {
-        return DriverDetailsProviderImpl(jsonProvider, serialization)
+    ): CircuitDetailsProvider {
+        return CircuitDetailsProviderImpl(jsonProvider, serialization)
     }
 }

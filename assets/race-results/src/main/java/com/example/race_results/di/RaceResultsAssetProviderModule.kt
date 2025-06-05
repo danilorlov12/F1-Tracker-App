@@ -1,9 +1,9 @@
-package com.example.drivers.di
+package com.example.race_results.di
 
-import com.example.drivers.DriverDetailsProvider
-import com.example.drivers.DriverDetailsProviderImpl
 import com.example.json_serializer.json_provider.JsonProvider
 import com.example.json_serializer.serialization.Serialization
+import com.example.race_results.RaceResultsAssetProvider
+import com.example.race_results.RaceResultsAssetProviderImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,14 +12,14 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DriverDetailsAssetProviderModule {
+object RaceResultsAssetProviderModule {
 
     @Provides
     @Singleton
-    fun provideDriverDetailsAssetProvider(
+    fun provideRaceResultAssetProvider(
         jsonProvider: JsonProvider,
         serialization: Serialization
-    ): DriverDetailsProvider {
-        return DriverDetailsProviderImpl(jsonProvider, serialization)
+    ): RaceResultsAssetProvider {
+        return RaceResultsAssetProviderImpl(jsonProvider, serialization)
     }
 }

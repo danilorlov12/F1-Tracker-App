@@ -1,9 +1,9 @@
-package com.example.drivers.di
+package com.example.seasons.di
 
-import com.example.drivers.DriverDetailsProvider
-import com.example.drivers.DriverDetailsProviderImpl
 import com.example.json_serializer.json_provider.JsonProvider
 import com.example.json_serializer.serialization.Serialization
+import com.example.seasons.SeasonAssetProvider
+import com.example.seasons.SeasonAssetProviderImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,14 +12,14 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DriverDetailsAssetProviderModule {
+object SeasonsAssetProviderModule {
 
     @Provides
     @Singleton
-    fun provideDriverDetailsAssetProvider(
+    fun provideSeasonsAssetProvider(
         jsonProvider: JsonProvider,
         serialization: Serialization
-    ): DriverDetailsProvider {
-        return DriverDetailsProviderImpl(jsonProvider, serialization)
+    ): SeasonAssetProvider {
+        return SeasonAssetProviderImpl(jsonProvider, serialization)
     }
 }

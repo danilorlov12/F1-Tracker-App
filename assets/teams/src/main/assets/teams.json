@@ -1,0 +1,42 @@
+[
+  {
+    "id": 0,
+    "name": "McLaren"
+  },
+  {
+    "id": 1,
+    "name": "Ferrari"
+  },
+  {
+    "id": 2,
+    "name": "Red Bull Racing"
+  },
+  {
+    "id": 3,
+    "name": "Mercedes"
+  },
+  {
+    "id": 4,
+    "name": "Aston Martin"
+  },
+  {
+    "id": 5,
+    "name": "Alpine"
+  },
+  {
+    "id": 6,
+    "name": "Haas"
+  },
+  {
+    "id": 7,
+    "name": "RB"
+  },
+  {
+    "id": 8,
+    "name": "Williams"
+  },
+  {
+    "id": 9,
+    "name": "Kick Sauber"
+  }
+]

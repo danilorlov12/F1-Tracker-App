@@ -1,7 +1,7 @@
-package com.example.drivers.di
+package com.example.grand_prixes.di
 
-import com.example.drivers.DriverDetailsProvider
-import com.example.drivers.DriverDetailsProviderImpl
+import com.example.grand_prixes.GrandPrixesAssetProvider
+import com.example.grand_prixes.GrandPrixesAssetProviderImpl
 import com.example.json_serializer.json_provider.JsonProvider
 import com.example.json_serializer.serialization.Serialization
 import dagger.Module
@@ -12,14 +12,14 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DriverDetailsAssetProviderModule {
+object GrandPrixesAssetProviderModule {
 
     @Provides
     @Singleton
-    fun provideDriverDetailsAssetProvider(
+    fun provideGrandPrixesAssetProvider(
         jsonProvider: JsonProvider,
         serialization: Serialization
-    ): DriverDetailsProvider {
-        return DriverDetailsProviderImpl(jsonProvider, serialization)
+    ): GrandPrixesAssetProvider {
+        return GrandPrixesAssetProviderImpl(jsonProvider, serialization)
     }
 }
