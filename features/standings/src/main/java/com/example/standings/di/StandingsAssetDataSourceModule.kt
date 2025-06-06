@@ -2,6 +2,7 @@ package com.example.standings.di
 
 import com.example.drivers.DriverDetailsProvider
 import com.example.race_results.RaceResultsAssetProvider
+import com.example.sprint_results.SprintResultsAssetProvider
 import com.example.standings.data.asset_data_source.StandingsAssetDataSource
 import com.example.standings.data.asset_data_source.StandingsAssetDataSourceImpl
 import com.example.teams.TeamDetailsProvider
@@ -19,11 +20,12 @@ class StandingsAssetDataSourceModule {
     @Singleton
     fun provideStandingsAssetDataSource(
         raceResultsAssetProvider: RaceResultsAssetProvider,
+        sprintResultsAssetProvider: SprintResultsAssetProvider,
         teamsDetailsAssetProvider: TeamDetailsProvider,
         driversDetailsAssetProvider: DriverDetailsProvider
     ): StandingsAssetDataSource {
         return StandingsAssetDataSourceImpl(
-            raceResultsAssetProvider, teamsDetailsAssetProvider, driversDetailsAssetProvider
+            raceResultsAssetProvider, sprintResultsAssetProvider, teamsDetailsAssetProvider, driversDetailsAssetProvider
         )
     }
 }

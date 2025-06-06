@@ -1,6 +1,7 @@
 package com.example.standings.domain.teams
 
 import com.example.race_results.model.RaceResultAssetModel
+import com.example.sprint_results.model.SprintResultAssetModel
 import com.example.standings.data.api_model.TeamStandingsApiModel
 import com.example.teams.model.TeamDetailsAssetModel
 
@@ -14,7 +15,11 @@ interface TeamStandingsResult {
 
         fun mapError(error: String): T
 
-        fun mapAsset(raceResults: List<RaceResultAssetModel>, teams: List<TeamDetailsAssetModel>): T
+        fun mapAsset(
+            raceResults: List<RaceResultAssetModel>,
+            sprintResults: List<SprintResultAssetModel>,
+            teams: List<TeamDetailsAssetModel>
+        ): T
     }
 
     data class Success(private val model: TeamStandingsApiModel?) : TeamStandingsResult {
@@ -31,10 +36,11 @@ interface TeamStandingsResult {
 
     data class Asset(
         private val raceResults: List<RaceResultAssetModel>,
+        private val sprintResults: List<SprintResultAssetModel>,
         private val teams: List<TeamDetailsAssetModel>
     ) : TeamStandingsResult {
         override fun <T : Any> map(mapper: Mapper<T>): T {
-            return mapper.mapAsset(raceResults, teams)
+            return mapper.mapAsset(raceResults, sprintResults, teams)
         }
     }
 }

@@ -1,9 +1,9 @@
-package com.example.race_results.di
+package com.example.sprint_results.di
 
 import com.example.json_serializer.json_provider.JsonProvider
 import com.example.json_serializer.serialization.Serialization
-import com.example.race_results.RaceResultsAssetProvider
-import com.example.race_results.RaceResultsAssetProviderImpl
+import com.example.sprint_results.SprintResultsAssetProvider
+import com.example.sprint_results.SprintResultsAssetProviderImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,14 +12,14 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RaceResultsAssetProviderModule {
+object SprintResultsAssetProviderModule {
 
     @Provides
     @Singleton
-    fun provideRaceResultsAssetProvider(
+    fun provideSprintResultsAssetProvider(
         jsonProvider: JsonProvider,
         serialization: Serialization
-    ): RaceResultsAssetProvider {
-        return RaceResultsAssetProviderImpl(jsonProvider, serialization)
+    ): SprintResultsAssetProvider {
+        return SprintResultsAssetProviderImpl(jsonProvider, serialization)
     }
 }

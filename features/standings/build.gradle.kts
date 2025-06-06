@@ -56,6 +56,7 @@ dependencies {
     implementation(project(":features:driver-details"))
 
     implementation(project(":assets:race-results"))
+    implementation(project(":assets:sprint-results"))
     implementation(project(":assets:teams"))
     implementation(project(":assets:drivers"))
     implementation(project(":assets:seasons"))

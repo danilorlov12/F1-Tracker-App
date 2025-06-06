@@ -60,6 +60,7 @@ dependencies {
     implementation(project(":assets:drivers"))
     implementation(project(":assets:teams"))
     implementation(project(":assets:race-results"))
+    implementation(project(":assets:sprint-results"))
     implementation(project(":assets:seasons"))
 
     implementation(project(":json-serializer"))

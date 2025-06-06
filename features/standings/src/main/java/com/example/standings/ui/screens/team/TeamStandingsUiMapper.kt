@@ -2,6 +2,7 @@ package com.example.standings.ui.screens.team
 
 import com.example.core.providers.TeamLogoProvider
 import com.example.race_results.model.RaceResultAssetModel
+import com.example.sprint_results.model.SprintResultAssetModel
 import com.example.standings.data.api_model.TeamStandingsApiModel
 import com.example.standings.domain.teams.TeamStandingsResult
 import com.example.standings.ui.model.Team
@@ -32,8 +33,38 @@ class TeamStandingsUiMapper @Inject constructor(
 
     override fun mapAsset(
         raceResults: List<RaceResultAssetModel>,
+        sprintResults: List<SprintResultAssetModel>,
         teams: List<TeamDetailsAssetModel>
     ): TeamStandingsUiState {
-        return TeamStandingsUiState.Success(emptyList())
+
+        val raceTeamPointsMap = raceResults.groupBy { it.teamId }
+            .mapValues { (_, results) ->
+                results.sumOf { it.points }
+            }
+
+        val sprintTeamPointsMap = sprintResults.groupBy { it.teamId }
+            .mapValues { (_, results) ->
+                results.sumOf { it.points }
+            }
+
+        val totalPoints = (raceTeamPointsMap.keys + sprintTeamPointsMap.keys)
+            .distinct()
+            .associateWith { driverId ->
+                (raceTeamPointsMap[driverId] ?: 0.0) + (sprintTeamPointsMap[driverId] ?: 0.0)
+            }
+
+        return TeamStandingsUiState.Success(
+            teams.map {
+                Team(
+                    id = it.id,
+                    name = it.name,
+                    logoResId = teamLogoProvider.logoByTeamId(it.id),
+                    points = totalPoints[it.id] ?: 0.0,
+                    place = 0
+                )
+            }.sortedByDescending { it.points }.mapIndexed { index, team ->
+                team.copy(place = index + 1)
+            }
+        )
     }
 }
