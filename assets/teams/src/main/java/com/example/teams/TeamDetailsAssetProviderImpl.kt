@@ -10,10 +10,10 @@ import javax.inject.Singleton
 private const val TEAMS = "teams.json"
 
 @Singleton
-class TeamDetailsProviderImpl @Inject constructor(
+class TeamDetailsAssetProviderImpl @Inject constructor(
     private val jsonProvider: JsonProvider,
     private val serialization: Serialization
-) : TeamDetailsProvider {
+) : TeamDetailsAssetProvider {
 
     override fun teams(): List<TeamDetailsAssetModel> {
         return fromJsonAsset(jsonProvider, serialization, TEAMS)

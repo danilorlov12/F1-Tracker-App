@@ -10,10 +10,10 @@ import javax.inject.Singleton
 private const val DRIVERS = "drivers.json"
 
 @Singleton
-class DriverDetailsProviderImpl @Inject constructor(
+class DriverDetailsAssetProviderImpl @Inject constructor(
     private val jsonProvider: JsonProvider,
     private val serialization: Serialization
-) : DriverDetailsProvider {
+) : DriverDetailsAssetProvider {
 
     override fun drivers(): List<DriverDetailsAssetModel> {
         return fromJsonAsset(jsonProvider, serialization, DRIVERS)

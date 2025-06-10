@@ -1,11 +1,11 @@
 package com.example.standings.di
 
-import com.example.drivers.DriverDetailsProvider
+import com.example.drivers.DriverDetailsAssetProvider
 import com.example.race_results.RaceResultsAssetProvider
 import com.example.sprint_results.SprintResultsAssetProvider
 import com.example.standings.data.asset_data_source.StandingsAssetDataSource
 import com.example.standings.data.asset_data_source.StandingsAssetDataSourceImpl
-import com.example.teams.TeamDetailsProvider
+import com.example.teams.TeamDetailsAssetProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,8 +21,8 @@ class StandingsAssetDataSourceModule {
     fun provideStandingsAssetDataSource(
         raceResultsAssetProvider: RaceResultsAssetProvider,
         sprintResultsAssetProvider: SprintResultsAssetProvider,
-        teamsDetailsAssetProvider: TeamDetailsProvider,
-        driversDetailsAssetProvider: DriverDetailsProvider
+        teamsDetailsAssetProvider: TeamDetailsAssetProvider,
+        driversDetailsAssetProvider: DriverDetailsAssetProvider
     ): StandingsAssetDataSource {
         return StandingsAssetDataSourceImpl(
             raceResultsAssetProvider, sprintResultsAssetProvider, teamsDetailsAssetProvider, driversDetailsAssetProvider

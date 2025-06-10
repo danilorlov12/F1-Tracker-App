@@ -1,7 +1,7 @@
 package com.example.drivers.di
 
-import com.example.drivers.DriverDetailsProvider
-import com.example.drivers.DriverDetailsProviderImpl
+import com.example.drivers.DriverDetailsAssetProvider
+import com.example.drivers.DriverDetailsAssetProviderImpl
 import com.example.json_serializer.json_provider.JsonProvider
 import com.example.json_serializer.serialization.Serialization
 import dagger.Module
@@ -19,7 +19,7 @@ object DriverDetailsAssetProviderModule {
     fun provideDriverDetailsAssetProvider(
         jsonProvider: JsonProvider,
         serialization: Serialization
-    ): DriverDetailsProvider {
-        return DriverDetailsProviderImpl(jsonProvider, serialization)
+    ): DriverDetailsAssetProvider {
+        return DriverDetailsAssetProviderImpl(jsonProvider, serialization)
     }
 }

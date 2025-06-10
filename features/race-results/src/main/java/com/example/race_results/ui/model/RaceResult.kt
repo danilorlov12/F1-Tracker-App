@@ -1,7 +1,11 @@
 package com.example.race_results.ui.model
 
+import androidx.compose.runtime.Immutable
+
+@Immutable
 data class RaceResult(
-    val countryFlagUrl: String,
+    val countryFlagUrl: String = "",
+    val countryFlagResId: Int = -1,
     val circuitName: String,
     val grandPrixName: String,
     val date: String,

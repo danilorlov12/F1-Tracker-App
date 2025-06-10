@@ -14,6 +14,5 @@ data class RaceResultAssetModel(
     @SerializedName("shortName") val shortName: String = "",
     @SerializedName("startingGrid") val startingGrid: Int = 0,
     @SerializedName("teamId") val teamId: Int = 0,
-    @SerializedName("timeRetired") val timeRetired: String = "",
-    @SerializedName("trackId") val trackId: Int = 0
+    @SerializedName("timeRetired") val timeRetired: String = ""
 )

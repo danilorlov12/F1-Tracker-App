@@ -1,11 +1,11 @@
 package com.example.standings.data.asset_data_source
 
-import com.example.drivers.DriverDetailsProvider
+import com.example.drivers.DriverDetailsAssetProvider
 import com.example.race_results.RaceResultsAssetProvider
 import com.example.sprint_results.SprintResultsAssetProvider
 import com.example.standings.domain.drivers.DriverStandingsResult
 import com.example.standings.domain.teams.TeamStandingsResult
-import com.example.teams.TeamDetailsProvider
+import com.example.teams.TeamDetailsAssetProvider
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -13,8 +13,8 @@ import javax.inject.Singleton
 class StandingsAssetDataSourceImpl @Inject constructor(
     private val raceResultsAssetProvider: RaceResultsAssetProvider,
     private val sprintResultsAssetProvider: SprintResultsAssetProvider,
-    private val teamsDetailsAssetProvider: TeamDetailsProvider,
-    private val driversDetailsAssetProvider: DriverDetailsProvider
+    private val teamsDetailsAssetProvider: TeamDetailsAssetProvider,
+    private val driversDetailsAssetProvider: DriverDetailsAssetProvider
 ) : StandingsAssetDataSource {
 
     override fun driverStandings(season: Int): DriverStandingsResult.Asset {

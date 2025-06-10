@@ -3,7 +3,6 @@ package com.example.race_results.ui.screens.views
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -12,14 +11,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -47,22 +44,32 @@ fun RaceResultItem(result: RaceResult) {
             Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
+                if (result.countryFlagUrl.isEmpty()) {
+                    Image(
+                        modifier = Modifier
+                            .width(128.dp)
+                            .height(72.dp),
+                        painter = painterResource(result.countryFlagResId),
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop
+                    )
+                } else {
+                    val imageRequest = ImageRequest.Builder(LocalContext.current)
+                        .data(result.countryFlagUrl)
+                        .dispatcher(Dispatchers.IO)
+                        .diskCachePolicy(CachePolicy.ENABLED)
+                        .memoryCachePolicy(CachePolicy.ENABLED)
+                        .build()
 
-                val imageRequest = ImageRequest.Builder(LocalContext.current)
-                    .data(result.countryFlagUrl)
-                    .dispatcher(Dispatchers.IO)
-                    .diskCachePolicy(CachePolicy.ENABLED)
-                    .memoryCachePolicy(CachePolicy.ENABLED)
-                    .build()
-
-                AsyncImage(
-                    modifier = Modifier
-                        .width(128.dp)
-                        .height(72.dp),
-                    model = imageRequest,
-                    contentDescription = null,
-                    contentScale = ContentScale.Crop
-                )
+                    AsyncImage(
+                        modifier = Modifier
+                            .width(128.dp)
+                            .height(72.dp),
+                        model = imageRequest,
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop
+                    )
+                }
 
                 Column {
                     Text(
@@ -83,14 +90,14 @@ fun RaceResultItem(result: RaceResult) {
                             fontSize = 14.sp
                         )
 
-                        Spacer(modifier = Modifier.width(4.dp))
-
-                        Icon(
-                            painter = painterResource(android.R.drawable.ic_menu_zoom),
-                            contentDescription = null,
-                            tint = Color.White,
-                            modifier = Modifier.size(16.dp)
-                        )
+//                        Spacer(modifier = Modifier.width(4.dp))
+//
+//                        Icon(
+//                            painter = painterResource(android.R.drawable.ic_menu_zoom),
+//                            contentDescription = null,
+//                            tint = Color.White,
+//                            modifier = Modifier.size(16.dp)
+//                        )
                     }
                 }
             }
