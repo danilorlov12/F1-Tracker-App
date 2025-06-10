@@ -15,8 +15,8 @@ class SeasonAssetProviderImpl @Inject constructor(
     private val serialization: Serialization
 ) : SeasonAssetProvider {
 
-    override fun raceIdsBySeason(season: Int): List<Int> {
+    override fun seasonInfoBySeason(season: Int): List<SeasonAssetModel> {
         val seasons = fromJsonAsset<List<SeasonAssetModel>>(jsonProvider, serialization, SEASONS)
-        return seasons.find { it.season == season }?.raceIds ?: emptyList()
+        return seasons.filter { it.season == season }
     }
 }

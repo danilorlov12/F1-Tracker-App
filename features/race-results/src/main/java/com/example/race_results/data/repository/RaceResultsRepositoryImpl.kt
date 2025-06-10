@@ -1,6 +1,7 @@
 package com.example.race_results.data.repository
 
 import com.example.race_results.data.RaceResultsServiceAPI
+import com.example.race_results.data.asset_data_source.RaceResultsAssetDataSource
 import com.example.race_results.domain.RaceResultsRepository
 import com.example.race_results.domain.RaceResultsResult
 import kotlinx.coroutines.flow.catch
@@ -11,7 +12,8 @@ import javax.inject.Singleton
 
 @Singleton
 class RaceResultsRepositoryImpl @Inject constructor(
-    private val serviceAPI: RaceResultsServiceAPI
+    private val serviceAPI: RaceResultsServiceAPI,
+    private val raceResultsAssetDataSource: RaceResultsAssetDataSource
 ) : RaceResultsRepository {
 
     override fun loadRaceResultsByYear(year: Int) = flow {
@@ -23,6 +25,6 @@ class RaceResultsRepositoryImpl @Inject constructor(
             RaceResultsResult.Error(result.message())
         }
     }.catch {
-        emit(RaceResultsResult.Error(""))
+        emit(raceResultsAssetDataSource.raceResults(year))
     }
 }

@@ -1,6 +1,7 @@
 package com.example.standings.data.repository
 
 import com.example.standings.data.StandingsServiceAPI
+import com.example.standings.data.asset_data_source.StandingsAssetDataSource
 import com.example.standings.domain.StandingsRepository
 import com.example.standings.domain.drivers.DriverStandingsResult
 import com.example.standings.domain.teams.TeamStandingsResult
@@ -12,7 +13,8 @@ import javax.inject.Singleton
 
 @Singleton
 class StandingsRepositoryImpl @Inject constructor(
-    private val serviceAPI: StandingsServiceAPI
+    private val serviceAPI: StandingsServiceAPI,
+    private val dataSource: StandingsAssetDataSource,
 ) : StandingsRepository {
 
     override fun loadDriverStandingsByYear(year: Int) = flow {
@@ -24,8 +26,7 @@ class StandingsRepositoryImpl @Inject constructor(
             DriverStandingsResult.Error(result.message())
         }
     }.catch {
-        emit(DriverStandingsResult.Success(fakeDriverList))
-        //emit(DriverStandingsResult.Error(""))
+        emit(dataSource.driverStandings(year))
     }
 
     override fun loadTeamStandingsByYear(year: Int) = flow {
@@ -37,6 +38,6 @@ class StandingsRepositoryImpl @Inject constructor(
             TeamStandingsResult.Error(result.message())
         }
     }.catch {
-        emit(TeamStandingsResult.Error(""))
+        emit(dataSource.teamStandings(year))
     }
 }

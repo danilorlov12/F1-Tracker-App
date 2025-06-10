@@ -16,7 +16,7 @@ object RaceResultsAssetProviderModule {
 
     @Provides
     @Singleton
-    fun provideRaceResultAssetProvider(
+    fun provideRaceResultsAssetProvider(
         jsonProvider: JsonProvider,
         serialization: Serialization
     ): RaceResultsAssetProvider {
