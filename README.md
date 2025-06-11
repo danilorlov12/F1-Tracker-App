@@ -3,15 +3,24 @@
 The Android app that helps F1 fans view statistics about F1 drivers, teams, and races by specific year.
 
 ### Tech-stack:
-* Kotlin
-* Jetpack Compose
-* ViewModel + StateFlow
-* Kotlin Coroutines
-* Modularisation
-* JSON assets for offline data
-* Retrofit + okhttp3
-* Dagger + Hilt
-* JUnit4
+* 💻 Language: Kotlin
+* 🎨 UI: Jetpack Compose
+* ⟳ State Management: ViewModel + StateFlow
+* ⏱️ Concurrency: Kotlin Coroutines
+* 🧰 Architecture: Modularization
+* 📃 Offline Support: JSON assets for local data
+* 🌐 Networking: Retrofit + OkHttp
+* 🧠 Dependency Injection: Dagger + Hilt
+* 🤕 Testing: JUnit4
+
+### Modules
+│
+├── app/
+├── assets/
+├── base/
+├── core/
+├── features/
+├── json-serializer/
 
 ### Screens
 <p float="left">
