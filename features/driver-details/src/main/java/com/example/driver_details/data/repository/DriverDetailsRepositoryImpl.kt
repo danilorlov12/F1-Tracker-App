@@ -1,6 +1,7 @@
 package com.example.driver_details.data.repository
 
 import com.example.driver_details.data.DriverDetailsServiceAPI
+import com.example.driver_details.data.asset_data_source.DriverDetailsAssetDataSource
 import com.example.driver_details.domain.DriverDetailsRepository
 import com.example.driver_details.domain.DriverDetailsResult
 import com.example.drivers.DriverDetailsAssetProvider
@@ -13,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 class DriverDetailsRepositoryImpl @Inject constructor(
     private val serviceAPI: DriverDetailsServiceAPI,
-    private val assetProvider: DriverDetailsAssetProvider
+    private val driverDetailsAssetDataSource: DriverDetailsAssetDataSource
 ) : DriverDetailsRepository {
 
     override fun loadDriverDetails(id: Int) = flow {
@@ -25,6 +26,6 @@ class DriverDetailsRepositoryImpl @Inject constructor(
             DriverDetailsResult.Error(result.message())
         }
     }.catch {
-        emit(DriverDetailsResult.Asset(assetProvider.driverById(id)))
+        emit(driverDetailsAssetDataSource.driverDetails(id))
     }
 }

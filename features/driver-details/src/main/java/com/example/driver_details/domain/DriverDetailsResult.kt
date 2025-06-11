@@ -2,6 +2,7 @@ package com.example.driver_details.domain
 
 import com.example.driver_details.data.api_model.DriverDetailsApiModel
 import com.example.drivers.model.DriverDetailsAssetModel
+import com.example.teams.model.TeamDetailsAssetModel
 
 interface DriverDetailsResult {
 
@@ -13,7 +14,7 @@ interface DriverDetailsResult {
 
         fun mapError(error: String): T
 
-        fun mapAsset(model: DriverDetailsAssetModel?): T
+        fun mapAsset(driver: DriverDetailsAssetModel?, teams: List<TeamDetailsAssetModel>): T
     }
 
     data class Success(private val model: DriverDetailsApiModel?) : DriverDetailsResult {
@@ -28,9 +29,12 @@ interface DriverDetailsResult {
         }
     }
 
-    data class Asset(private val model: DriverDetailsAssetModel?): DriverDetailsResult {
+    data class Asset(
+        private val driver: DriverDetailsAssetModel?,
+        private val teams: List<TeamDetailsAssetModel>
+    ): DriverDetailsResult {
         override fun <T : Any> map(mapper: Mapper<T>): T {
-            return mapper.mapAsset(model)
+            return mapper.mapAsset(driver, teams)
         }
     }
 }

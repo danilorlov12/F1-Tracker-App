@@ -34,7 +34,7 @@ fun DriverItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(12.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Box(
@@ -67,13 +67,13 @@ fun DriverItem(
                     text = driver.name,
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp
+                    fontSize = 22.sp
                 )
                 Text(
                     text = driver.teamName,
                     color = Color.White,
                     fontWeight = FontWeight.Medium,
-                    fontSize = 18.sp
+                    fontSize = 14.sp
                 )
             }
 

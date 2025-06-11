@@ -93,13 +93,16 @@ fun RaceResultsSuccessScreen(driver: DriverDetails) {
             )
         }
 
-        TitledText(Modifier, "Current Name", driver.currentTeamName)
+        if (driver.currentTeamName.isNotEmpty()) {
 
-        HorizontalDivider(
-            modifier = Modifier.fillMaxWidth(),
-            color = Color.White,
-            thickness = 2.dp
-        )
+            TitledText(Modifier, "Current Name", driver.currentTeamName)
+
+            HorizontalDivider(
+                modifier = Modifier.fillMaxWidth(),
+                color = Color.White,
+                thickness = 2.dp
+            )
+        }
 
         Row(
             modifier = Modifier.fillMaxWidth(),

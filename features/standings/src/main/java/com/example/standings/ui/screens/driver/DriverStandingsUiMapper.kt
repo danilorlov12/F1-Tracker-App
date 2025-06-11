@@ -60,7 +60,7 @@ class DriverStandingsUiMapper @Inject constructor() : DriverStandingsResult.Mapp
 
                 Driver(
                     id = id,
-                    name = "${driver.lastName} ${driver.firstName[0]}",
+                    name = "${driver.lastName} ${driver.firstName[0]}.",
                     points = points,
                     place = 0,
                     teamName = relatedTeams.joinToString(" | ") { it.name }

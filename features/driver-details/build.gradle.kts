@@ -53,6 +53,7 @@ dependencies {
 
     implementation(project(":core"))
     implementation(project(":assets:drivers"))
+    implementation(project(":assets:teams"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

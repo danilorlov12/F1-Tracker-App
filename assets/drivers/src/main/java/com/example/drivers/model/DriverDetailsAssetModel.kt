@@ -13,5 +13,7 @@ data class DriverDetailsAssetModel(
     @SerializedName("wins") val wins: Int = 0,
     @SerializedName("podiums") val podiums: Int = 0,
     @SerializedName("poles") val poles: Int = 0,
-    @SerializedName("fastestLaps") val fastestLaps: Int = 0
+    @SerializedName("fastestLaps") val fastestLaps: Int = 0,
+    @SerializedName("number") val number: Int = 0,
+    @SerializedName("currentTeamId") val teamId: Int = 0
 )

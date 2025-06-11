@@ -1,6 +1,7 @@
 package com.example.driver_details.di
 
 import com.example.driver_details.data.DriverDetailsServiceAPI
+import com.example.driver_details.data.asset_data_source.DriverDetailsAssetDataSource
 import com.example.driver_details.data.repository.DriverDetailsRepositoryImpl
 import com.example.driver_details.domain.DriverDetailsRepository
 import com.example.drivers.DriverDetailsAssetProvider
@@ -18,8 +19,8 @@ class DriverDetailsRepositoryModule {
     @Singleton
     fun provideDriverDetailsRepository(
         serviceApi: DriverDetailsServiceAPI,
-        assetProvider: DriverDetailsAssetProvider
+        dataSource: DriverDetailsAssetDataSource
     ): DriverDetailsRepository {
-        return DriverDetailsRepositoryImpl(serviceApi, assetProvider)
+        return DriverDetailsRepositoryImpl(serviceApi, dataSource)
     }
 }
