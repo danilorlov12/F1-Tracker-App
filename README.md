@@ -14,13 +14,12 @@ The Android app that helps F1 fans view statistics about F1 drivers, teams, and 
 * 🤕 Testing: JUnit4
 
 ### Modules
-│
-├── app/
-├── assets/
-├── base/
-├── core/
-├── features/
-├── json-serializer/
+- app
+- assets
+- base
+- core
+- features
+- json-serializer
 
 ### Screens
 <p float="left">
